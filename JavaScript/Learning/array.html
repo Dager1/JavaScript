@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Learning about arrays</h1>
+    <ul>
+        <li>Used slice</li>
+        <li>Used indexOf</li>
+        <li>Used length</li>
+    </ul>
+    <script>
+        const groceries = ['banna ', 'apple','pear','mango']
+        //acessing values in an array uisng indexing
+        console.log(groceries[1])
+        //adding to the array 
+        groceries.push('biskets')
+        console.log(groceries)
+        //using slice funtion
+        console.log(groceries.slice(0,1))
+        console.log(groceries.slice(0,2))
+        console.log(groceries.slice(1,3))
+        console.log(groceries.slice(1,4))
+        console.log(groceries.slice(1,5))
+       // using indexOf
+       console.log(groceries.indexOf("apple"))
+       console.log(groceries.indexOf("biskets"))
+       //using length 
+       console.log(groceries.length)
+    </script>
+</body>
+</html>
