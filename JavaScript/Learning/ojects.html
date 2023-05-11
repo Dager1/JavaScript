@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Objets</h1>
+    <ul>
+        <li>access using dot notation</li>
+        <li>access using bracket natation ['']</li>
+        <li>you can add a new key on the fly by using <b>objectName . Key</b> = value <i><b>or</b></i> <b>object['key'] </b>= value.</li>
+    </ul>
+    <script>
+        const person = {
+            name :"Leonardo",
+            shirt:"white ",
+            hight :"6 foot "
+        }
+        //access using object using dot notation 
+        console.log (person.name)
+        console.log(person.shirt)
+
+        //access object using braket notation ['']
+        console.log(person['name'])
+        console.log(person['hight'])
+
+        //adding key using dot 
+        person.phoneNumber='996473992'
+
+        //adding using bracket
+        person['palce']= 'America'
+
+        console.log(person)
+
+       // made an intrduction function
+       //used arrow funtion (two arguments)
+       //passed in object values 
+       //called an method
+       //used the this key word
+       const introduction = (name,shirt)=>{
+        let person={
+            name:name,
+            shirt:shirt,
+            asset:100000,
+            liability:50000,
+            networth : function cost(){
+                net=this.asset-this.liability
+                return net
+            }
+
+        }
+        intro=`My name is ${person.name } and i am where a ${person.shirt} shirt and my net worth is ${person.networth()}`
+        return intro
+
+       }
+       console.log(introduction('frank','black'))
+
+    </script>
+</body>
+</html>
