@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>Working with loops </h1>
+<h2>Used a conventional for loop</h2>
+<h2>Used <b>for('varable' of 'varables')</b> a pytonic loop</h2>
+<h2>Used lenght funtion for ease of coding</h2>
+<body>
+    <script>
+        const groceries = ['banna ', 'apple','pear','mango']
+        // for (i=0;i<groceries.length;i++){
+        //     console.log(i,groceries[i])
+        // }
+       
+
+        for (const fruit of groceries){
+            console.log(groceries.indexOf(fruit),fruit)
+        }
+
+        //funtion which double the initail value 
+        const double = (numbers)=>{
+            const result = [];
+            for(number of numbers){
+                result.push(number*2)
+                
+            }
+            return result;
+        }
+
+        console.log(double([1,2,3,4,5]))
+      //funtion that counts letters 
+
+      function letterCounter(){
+        let phrase = "I am going to attemp to count the letters in this sentance."
+        let value = 0
+        for (letter in phrase){
+            console.log(letter)
+            value = Number(letter) + 1
+        }
+        return {value }
+      }
+      console.log(letterCounter())
+      //
+
+      // OR i could have just used the length operator
+      let phrase = "I am going to attemp to count the letters in this sentance."
+      l=phrase.length
+      console.log( {val:1})
+
+      // to making a sum 
+
+      const summing = (numbs) =>{
+        let store = 0
+         for(numb of numbs ){
+            console.log(numb)
+            store= store + numb
+         }
+         return store
+      }
+      console.log(summing([23,3,4]))
+
+      //a max funtion ->gives the maximum number in an array
+
+      const max = (nums)=>{
+        let result = nums[0]
+        for (num of nums ){
+            if (num>result){
+                result = num
+            }
+        }
+        return {result}
+      }
+      console.log(max([2,3,6,7]))
+
+      // frequency counter -> it return counts repeated values 
+      const Letterfrequency = (words)=>{
+        //define an object to store it
+        let frequency = {}
+        for (word of words){
+           //check if the word exits
+           if (word in frequency){
+           //increment the value by 1
+           //other wise set the value to one
+           frequency[word] +=1
+           }else{
+            frequency[word]=1
+           }
+           
+        }
+        return frequency
+
+      }
+      let words = 'thisstahtthem'
+      console.log(Letterfrequency(words))
+      
+    //word counter 
+      const WordFrequency =(phase)=>{
+        // let frequency ={}
+         let phases=phase.split(' ')
+        // for(word of phases){
+        //     if (word in frequency){
+        //         frequency[word]+=1
+        //     }
+        //     else{
+        //         frequency[word]=1
+        //     }
+        
+        // }
+        // return frequency
+        Letterfrequency(phases)
+
+      }
+      let sentance = "Phill is the stronest man here"
+     console.log( WordFrequency(sentance))
+    // WordFrequency(sentance)
+
+
+
+    </script>
+</body>
+</html>
