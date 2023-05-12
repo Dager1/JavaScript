@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HigerOrder</title>
+</head>
+<body>
+    <h1>Higer order funtion</h1>
+    <h2>started with map funtion</h2>
+    <h2>Filters</h2>
+    <ul>
+        <li>It returns an array</li>
+        <li>with matching conditions </li>
+    </ul>
+    <script>
+       const doubleMapp = ( numbers)=>{
+       return numbers.map((number)=>number*2)
+        }
+        console.log(doubleMapp([1,2,3,4,5,6]))
+
+        // const filter=(numbers,grether)=>{
+        //     result=[]
+        //     for (nuber of numbers)
+        //     if(nuber > grether){
+        //         result.push(nuber)
+        //     }
+        //  return result
+        // }
+        // console.log(filter([2,3,4,5,6],3))
+      
+        const numbs = [1,2,3,4,5,6]
+       const f =numbs.filter((numb)=>numb>4)
+       console.log(f)
+
+    </script>
+</body>
+</html>
