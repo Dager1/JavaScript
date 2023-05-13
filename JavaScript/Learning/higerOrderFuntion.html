@@ -8,11 +8,21 @@
 </head>
 <body>
     <h1>Higer order funtion</h1>
+    <ul>
+        <li>Passing in a funtion</li>
+    </ul>
     <h2>started with map funtion</h2>
     <h2>Filters</h2>
     <ul>
         <li>It returns an array</li>
         <li>with matching conditions </li>
+    </ul>
+    <h2>Reduce </h2>
+    <ul>
+        <li>
+            Reduce loops and gievs back the accumulator
+        </li>
+        <li>it takes in two argumets one is a funtion and the other arugment is an ?number</li>
     </ul>
     <script>
        const doubleMapp = ( numbers)=>{
@@ -33,7 +43,38 @@
         const numbs = [1,2,3,4,5,6]
        const f =numbs.filter((numb)=>numb>4)
        console.log(f)
+      
+       //array of objets of actors and there salary 
+     const actors=[
+        {name:"Jonny",salary:100000},
+        {name:"Leo",salary:50000},
+        {name:'Amber',salary:40}
+     ]
+     //using filter funtion to filter out people with salary above 100
+    let result = actors.filter((actor)=> actor.salary>100)
+    console.log(result)
+    //using the map funtion to loop over and retrive only the names
+    names = result.map(name=>name.name).join(',')
+    // document.body.innerHTML = `<h1>${names}</h1>`
+    console.log(names)
 
+    //reduce funtion
+   // reduce using a simple call back
+    const l = numbs.reduce((a,b)=>a+b)
+    console.log(l)
+
+    const sum=(a,b)=>{
+        return a+b
+    }
+   
+    // reduce by calling a funtion
+   const lumber = [5,6,7,8]
+   const k =lumber.reduce(sum)
+   console.log(k)
+
+   //calculating the networth from array actors
+   const sal=actors. reduce((prev,curr)=>prev+curr.salary,0)
+   console.log(sal)
     </script>
 </body>
 </html>
