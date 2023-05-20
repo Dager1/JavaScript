@@ -5,26 +5,53 @@
 </head>
 <body>
     <h1>Build up to my rock scissors game</h1>
-   <div style="display: flex;">
-    <div id="red" style="height: 100px; width: 100px; background-color: red ; display: flex;">
+   <div style="display: flex; ">
+    <button class="colorSquare" id="red" value="red" style="height: 100px; width: 100px; background-color: red ; display: flex;"></button>
+    <button class="colorSquare" id="yellow" value="yellow" style="height: 100px; width: 100px; background-color: yellow;display: flex;"></button>
+    <button class="colorSquare" id="green" value="green" style="height: 100px; width: 100px; background-color: green;display: flex;"></button> 
    
-    </div>
-    <div id="yellow" style="height: 100px; width: 100px; background-color: yellow;display: flex;">
-
-    </div>
-    <div id="green" style="height: 100px; width: 100px; background-color: green;display: flex;">
-
-    </div>
-    
+   </div>
+   <div>
+    <button id="clear" onclick="">Clear Game</button>
    </div>
    <script>
     let redDiv= document.getElementById('red')
     let yellowDiv= document.getElementById('yellow')
     let greenDiv= document.getElementById('green')
 
-    redDiv.onclick= ()=> alert("You clicked red box")
-    yellowDiv.onclick= ()=> alert("You clicked yellow box")
-    greenDiv.onclick= ()=> alert("You clicked green box")
+    // redDiv.onclick= ()=> console.log("You clicked red box")
+    // yellowDiv.onclick= ()=> console.log("You clicked yellow box")
+    // greenDiv.onclick= ()=> console.log("You clicked green box")
+    
+    const squares = document.querySelectorAll('.colorSquare')
+    console.log(squares)
+    // console.log(squares[0].value)
+    // console.log(squares[1].value)
+    // console.log(squares[2].value)
+
+    //used the forEach loop
+    //looped over all the squares to return the value
+      
+    const timesClicked = {'red':0,'yellow':0,'green':0}
+    squares.forEach(square => {
+         square.onclick=()=>{
+        // console.log(square.value) 
+        timesClicked[square.value]+=1
+        square.innerText=timesClicked[square.value]}
+              });
+
+    function clearSquare (){
+        timesClicked.red =0
+        timesClicked.yellow = 0
+        timesClicked,green = 0
+       squares.forEach(square=>{
+        square.innerText=""
+       })
+    }
+
+    const clrBtn = document.getElementById('clear')
+    clrBtn.onclick=()=>clearSquare()
+    
    </script>
 </body>
 </html>
