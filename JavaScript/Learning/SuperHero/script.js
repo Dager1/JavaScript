@@ -11,7 +11,7 @@ const getSuperHero = (id, name) => {
     .then((response) => response.json())
     .then((json) => {
       console.log(json);
-      heroImgDiv.innerHTML = `<img src="${json.image.url}" height=200 width=200>`;
+      getStats(json);
     })
     .catch((error) => {
       console.log("Error fetching superhero data:", error);
@@ -24,9 +24,18 @@ const getSearchedSuperHero = (name) => {
     .then((response) => response.json())
     .then((json) => {
       const hero = json.results[0];
-      console.log(hero);
-      heroImgDiv.innerHTML = `<img src="${hero.image.url}" height=200 width=200>`;
+      getStats(hero);
     });
+};
+
+const getStats = (character) => {
+  const name = `<h2>${character.name}</h2>`;
+  const img = `<img src="${character.image.url}" height=200 width=200>`;
+  const stats = Object.keys(character.powerstats).map((stat) => {
+    return `<p>${stat}:${character.powerstats[stat]}</p>`;
+  });
+  heroImgDiv.innerHTML = `${name}${img}${stats}`;
+  return stats.join("");
 };
 
 const randomHero = () => {
